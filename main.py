@@ -29,7 +29,7 @@ while True:
         print('Invalid mail')
         input()
         break
-    password = getpass.getpass(prompt='Password> ', stream='*')
+    password = getpass.getpass(prompt='Password> ')
 
     r = requests.post('https://discord.com/api/v9/auth/login', headers={'Content-Type': 'application/json'}, data=json.dumps({"login": mail, "password": password, "undelete": False, "login_source": None, "gift_code_sku_id": None}))
     if r.status_code == 200:
