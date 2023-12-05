@@ -43,7 +43,7 @@ while True:
                 smsotpsend = requests.post('https://discord.com/api/v9/auth/mfa/sms/send', headers={'Content-Type': 'application/json'}, data=json.dumps({"ticket": r.json().get('ticket')}))
                 while True:
                     totp = input(f'{smsotpsend.json()["phone"]} SMS> ')
-                    if len(totp) != 6 or not totp.isdigit():
+                    if not totp or len(str(totp)) != 6 or not totp.isdigit():
                         print('Invalid code')
                         break
 
@@ -61,7 +61,7 @@ while True:
             elif otp.lower() == 'totp':
                 while True:
                     totp = input('TOTP> ')
-                    if len(totp) != 6 or not totp.isdigit():
+                    if not totp or len(str(totp)) != 6 or not totp.isdigit():
                         print('Invalid code')
                     break
 
@@ -92,7 +92,7 @@ while True:
 
             while True:
                 totp = input('TOTP> ')
-                if not totp.isdigit() or len(int(totp)) != 6:
+                if not totp.isdigit() or len(str(totp)) != 6:
                     print('Invalid code')
                 break
 
