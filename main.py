@@ -23,7 +23,7 @@ def discordapierror(data) -> str:
 
 while True:
     os.system('cls')
-    print('\n  This software was made by Appolon for get your discord token.\n  If you don\'t trust this file or the person that give it to you, you can find the source code here\n  --> https://github.com/Appolon24800/AutoDiscordLogin\n')
+    print('\n  This software was made by Appolon to get your discord token.\n  If you don\'t trust this file or the person that give it to you, you can find the source code here\n  --> https://github.com/Appolon24800/AutoDiscordLogin\n')
     mail = input('Mail> ')
     if '@' not in mail:
         print('Invalid mail')
